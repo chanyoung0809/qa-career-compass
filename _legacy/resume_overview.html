@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 레이서를 위한 QA 커리어 나침반</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        :root {
+            --primary-color: #ff8b94;
+            --secondary-color: #ffaaa5;
+            --accent-color: #ffd3b6;
+            --bg-color: #fffaf0;
+            --text-main: #4a4a4a;
+            --text-light: #7a7a7a;
+            --card-bg: #ffffff;
+            --pain-color: #8c8cff;
+            --solution-color: #ff7b89;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            word-break:keep-all;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 24px;
+            padding: 40px 20px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 139, 148, 0.3);
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '✨';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 2rem;
+            opacity: 0.5;
+        }
+
+        .header::after {
+            content: '🏁';
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 3rem;
+            opacity: 0.3;
+        }
+
+        .header h1 {
+            margin: 0 0 15px 0;
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 1.15rem;
+            margin: 0;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+            border-top: 6px solid var(--accent-color);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(255, 139, 148, 0.15);
+        }
+
+        .card:nth-child(1) { border-color: #ffd3b6; }
+        .card:nth-child(2) { border-color: #a8e6cf; }
+        .card:nth-child(3) { border-color: #dcedc1; }
+        .card:nth-child(4) { border-color: #ffaaa5; }
+
+        .card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.4;
+        }
+
+        .section-box {
+            background-color: #fcfcfc;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #f0f0f0;
+        }
+
+        .section-box.pain {
+            background-color: #f8f8ff;
+            border-color: #e6e6ff;
+        }
+
+        .section-box.solution {
+            background-color: #fff5f6;
+            border-color: #ffe6e8;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .title-pain { color: var(--pain-color); }
+        .title-solution { color: var(--solution-color); }
+
+        .card ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        .card li {
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+        
+        .card li strong {
+            color: var(--text-main);
+            background: linear-gradient(120deg, rgba(255, 211, 182, 0.5) 0%, rgba(255, 211, 182, 0.5) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 88%;
+        }
+
+        .card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: var(--text-light);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .highlight {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>💖 레이서를 위한 QA 커리어 나침반</h1>
+        <p>취업 준비, 막막하고 불안하신가요? 내 이야기가 어디에 속하는지 찾아보고,<br>나만의 매력을 200% 끌어올릴 수 있는 맞춤형 전략을 발견해 보세요!</p>
+    </div>
+
+    <div class="card-grid">
+        <div class="card">
+            <div class="card-icon">🐣</div>
+            <div class="card-title">전공 지식은 빵빵하지만 실무는 처음인<br><span class="highlight">'새싹 전공자' 레이서</span></div>
+            
+            <div class="section-box pain">
+                <div class="section-title title-pain">💬 내 마음의 소리 (이런 고민 중이신가요?)</div>
+                <ul>
+                    <li>"전공자니까 꽤 전문적으로 보여야 할 것 같아!" 이력서에 '아키텍처 설계', '리버스 엔지니어링' 같은 무거운 단어들을 잔뜩 적고 있어요.</li>
+                    <li>사실 깊이 알지 못하는 기술 스택들도 방어막처럼 나열해 뒀는데, 면접관이 꼬리 질문을 할까 봐 속으로는 덜덜 떨고 있어요.</li>
+                </ul>
+            </div>
+
+            <div class="section-box solution">
+                <div class="section-title title-solution">🔑 나만의 치트키 (이렇게 돌파해 봐요!)</div>
+                <ul>
+                    <li><strong>화려한 기술보다 탄탄한 기본기 어필하기:</strong> 억지로 '다 아는 척' 할 필요 없어요. 대신 테스트 케이스(TC)를 얼마나 꼼꼼하게 설계했는지, 예외 상황을 어떻게 검증했는지 등 QA의 가장 빛나는 기본기를 포트폴리오에 담아주세요.</li>
+                    <li><strong>배우려는 자세가 최고의 무기:</strong> 모르는 건 입사해서 배우면 돼요! 낯가림을 깨고 "저는 전공 베이스가 있어서 무엇이든 빠르게 스폰지처럼 흡수할 수 있습니다"라고 풋풋하고 당당하게 말해보세요.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">⛵</div>
+            <div class="card-title">다른 IT 직무에서 QA로 방향을 튼<br><span class="highlight">'IT 항해사' 레이서</span></div>
+            
+            <div class="section-box pain">
+                <div class="section-title title-pain">💬 내 마음의 소리 (이런 고민 중이신가요?)</div>
+                <ul>
+                    <li>이전 직무(개발/기획)에서 야근이나 적성 문제로 많이 지쳤어요. 면접관이 "개발이 힘들어서 QA로 도망친 거 아니야?"라고 오해할까 봐 두려워요.</li>
+                    <li>직무를 바꾸긴 했는데, 막상 자소서에 '왜 하필 QA인지'를 설득력 있게 써 내려가기가 너무 막막해요.</li>
+                </ul>
+            </div>
+
+            <div class="section-box solution">
+                <div class="section-title title-solution">🔑 나만의 치트키 (이렇게 돌파해 봐요!)</div>
+                <ul>
+                    <li><strong>도피가 아니라 운명적 발견으로 포장하기:</strong> "개발이 안 맞아서요" 대신, "이전 업무를 하다 보니, 오류의 원인을 끈질기게 추적하고 품질을 높이는 과정 자체에 제 진짜 적성이 있다는 걸 깨달았습니다"라고 긍정적인 스토리로 뒤집어보세요!</li>
+                    <li><strong>나의 이전 경력은 특급 무기:</strong> 숲(서비스 전체)을 보는 기획자의 시야, 코드를 이해하는 개발자의 지식은 헛되지 않았어요. 개발자와 기획자 사이를 가장 잘 이어주는 '소통 만렙 QA'가 될 수 있다고 어필하세요.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🗺️</div>
+            <div class="card-title">비전공/비IT 직무에서 과감히 도전하는<br><span class="highlight">'용감한 탐험가' 레이서</span></div>
+            
+            <div class="section-box pain">
+                <div class="section-title title-pain">💬 내 마음의 소리 (이런 고민 중이신가요?)</div>
+                <ul>
+                    <li>내 과거 직무(보건의료, 일반행정 등)는 QA랑 아무 상관이 없어 보여서 너무 위축돼요.</li>
+                    <li>경력을 어떻게 포장해야 할지 몰라 그냥 사람인 기본 이력서 양식에 빈약하게 적어두거나, 아예 숨기고 싶어요.</li>
+                </ul>
+            </div>
+
+            <div class="section-box solution">
+                <div class="section-title title-solution">🔑 나만의 치트키 (이렇게 돌파해 봐요!)</div>
+                <ul>
+                    <li><strong>모든 과거 경험을 QA의 언어로 번역하기:</strong> 쓸모없는 경험은 없어요! 환자를 다루며 체득한 '엄격한 프로토콜 준수'나 사무실에서의 '꼼꼼한 데이터 모니터링'이 바로 QA의 핵심 역량인 '검증과 꼼꼼함'입니다. 당당하게 연결해 보세요.</li>
+                    <li><strong>시각적인 세련됨으로 승부 보기:</strong> 딱딱한 기본 이력서 템플릿은 버리세요! 깔끔한 PDF 이력서와 노션/PPT 포트폴리오를 만들어, 부트캠프에서 치열하게 해낸 자동화 프로젝트와 협업 툴(Jira 등) 사용 경험을 시각적으로 뽐내주세요.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🚀</div>
+            <div class="card-title">더 큰 IT 무대와 매니지먼트를 꿈꾸는<br><span class="highlight">'베테랑 도약가' 레이서</span></div>
+            
+            <div class="section-box pain">
+                <div class="section-title title-pain">💬 내 마음의 소리 (이런 고민 중이신가요?)</div>
+                <ul>
+                    <li>하드웨어나 아웃소싱 쪽에서 실무 경험은 꽤 쌓였는데, IT 플랫폼 기업이나 인하우스로 가려니 그쪽 면접관들과 쓰는 단어가 달라서 주파수가 안 맞는 느낌이에요.</li>
+                    <li>계속 단순 매뉴얼 테스터로만 남게 될까 봐 불안해요. 연봉과 직급을 올리고 싶은데 어떻게 어필해야 할까요?</li>
+                </ul>
+            </div>
+
+            <div class="section-box solution">
+                <div class="section-title title-solution">🔑 나만의 치트키 (이렇게 돌파해 봐요!)</div>
+                <ul>
+                    <li><strong>내 경험을 IT 표준 언어로 업데이트하기:</strong> 낯선 특수 업계 용어들은 과감히 풀어서 설명하거나, 웹/앱 서비스 면접관들에게 익숙한 보편적 소프트웨어 테스트 용어(예: UI/UX 정합성 검증, E2E 테스트)로 번역해 이력서를 다듬어보세요.</li>
+                    <li><strong>리더의 시각과 주도성 어필하기:</strong> '시키는 테스트만 잘해요'를 넘어설 때입니다. 지원하는 서비스에 JMeter 같은 성능 테스트를 도입한 경험이나, 자동화 스크립트를 짜본 경험을 내세워 'QA 프로세스 전체를 리드할 수 있는 사람'임을 보여주세요.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        여러분은 이미 훌륭한 자산을 가지고 있습니다. 남들과 비교하지 말고, 나만의 트랙에서 멋지게 완주해 보세요! 파이팅! 🏁💕
+    </div>
+</div>
+
+</body>
+</html>

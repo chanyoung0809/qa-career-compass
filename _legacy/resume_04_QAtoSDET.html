@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 레이서를 위한 QA 커리어 나침반 - 베테랑 도약가 편</title>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+        :root {
+            --primary-color: #ff8b94;
+            --secondary-color: #ffaaa5;
+            --accent-color: #ffaaa5;
+            --bg-color: #fffaf0;
+            --text-main: #4a4a4a;
+            --text-light: #7a7a7a;
+            --card-bg: #ffffff;
+            
+            /* Section Colors */
+            --color-spec: #ffaaa5;
+            --color-pain: #8c8cff;
+            --color-solution: #ff7b89;
+            --color-action: #a8e6cf;
+        }
+
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            word-break:keep-all;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .breadcrumb {
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .breadcrumb a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .header {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 24px;
+            padding: 50px 20px;
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 139, 148, 0.3);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '✨';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 2.5rem;
+            opacity: 0.5;
+        }
+
+        .header::after {
+            content: '🚀';
+            position: absolute;
+            bottom: -10px;
+            right: 20px;
+            font-size: 6rem;
+            opacity: 0.2;
+        }
+
+        .persona-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            backdrop-filter: blur(5px);
+        }
+
+        .header h1 {
+            margin: 0 0 15px 0;
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            margin: 0;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            border-top: 6px solid var(--accent-color);
+            position: relative;
+        }
+
+        .card-icon {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            display: block;
+        }
+
+        .section-box {
+            background-color: #fcfcfc;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid #f0f0f0;
+            transition: transform 0.2s ease;
+        }
+
+        .section-box:hover {
+            transform: translateY(-3px);
+        }
+
+        .section-box.spec {
+            background-color: #fff0f0;
+            border-color: #ffe6e6;
+        }
+        
+        .section-box.pain {
+            background-color: #f8f8ff;
+            border-color: #e6e6ff;
+        }
+
+        .section-box.solution {
+            background-color: #fff5f6;
+            border-color: #ffe6e8;
+        }
+
+        .section-box.action {
+            background-color: #f2fbf7;
+            border-color: #d6f5e8;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-top: 0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .title-spec { color: #e74c3c; }
+        .title-pain { color: var(--color-pain); }
+        .title-solution { color: var(--color-solution); }
+        .title-action { color: #27ae60; }
+
+        ul {
+            padding-left: 25px;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        
+        li strong {
+            color: var(--text-main);
+            background: linear-gradient(120deg, rgba(255, 170, 165, 0.4) 0%, rgba(255, 170, 165, 0.4) 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 88%;
+        }
+
+        li:last-child {
+            margin-bottom: 0;
+        }
+
+        .action-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .action-list li {
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 20px;
+        }
+
+        .action-list li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.2rem;
+        }
+
+        .action-button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .action-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(255, 139, 148, 0.3);
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 139, 148, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="breadcrumb">
+        <a href="#">🏠 메인으로</a> <span>&gt;</span> <span>나의 페르소나 찾기</span> <span>&gt;</span> <span>Type 04</span>
+    </div>
+
+    <div class="header">
+        <div class="persona-badge">Type 04</div>
+        <h1>더 큰 IT 무대와 매니지먼트를 꿈꾸는<br>'베테랑 도약가' 레이서 🚀</h1>
+        <p>실무라는 단단한 기반 위에, 이제 전체를 아우르는 리더의 시야를 장착할 차례입니다!</p>
+    </div>
+
+    <div class="card">
+        <div class="card-icon">🚀</div>
+
+        <div class="section-box spec">
+            <div class="section-title title-spec">📊 나의 현재 상황 (Specs)</div>
+            <ul>
+                <li><strong>경력 베이스:</strong> 제조업(자동차 IVI) 테스트, TTA 인증 시험, 혹은 협력사(아웃소싱) 등에서 2~4년 정도 QA/테스트 실무 경험을 쌓았어요.</li>
+                <li><strong>실무 경험:</strong> 주행 기반 E2E 매뉴얼 테스트, 데이터 검증 등 서비스의 품질을 꼼꼼하게 다루어본 경험이 있어요.</li>
+                <li><strong>커리어 목표:</strong> 연봉 캡이 명확한 현재 환경을 벗어나, IT 플랫폼 기업의 인하우스 QA나 매니지먼트/자동화 영역으로 레벨업을 원하고 있어요.</li>
+            </ul>
+        </div>
+        
+        <div class="section-box pain">
+            <div class="section-title title-pain">💬 내 마음의 소리 & 자주 묻는 고민</div>
+            <ul>
+                <li>새로운 IT 플랫폼 기업 면접관들이 내가 쓰는 특수 업계 용어(예: 자동차 업계 약어 등)를 이해하지 못해 핀트가 어긋난 적이 있어요.</li>
+                <li>'데이터 정합성' 같은 포괄적 용어를 썼다가 백엔드 경험으로 오해를 사 면접에서 곤란했던 적이 있어요.</li>
+                <li>권한이 제한적인 하청/협력사 환경 탓에 이직 시장에서 단순 테스터로만 평가받게 될까 봐 불안해요.</li>
+            </ul>
+        </div>
+
+        <div class="section-box solution">
+            <div class="section-title title-solution">🔑 나만의 치트키 (이렇게 돌파해 봐요!)</div>
+            <ul>
+                <li><strong>내 경험을 IT 표준 언어로 업데이트하기:</strong> 낯선 특수 업계 용어들은 웹/앱 서비스 면접관들에게 익숙한 보편적인 소프트웨어 테스트 언어(예: UI/카테고리 정합성 검증)로 구체화하여 번역해 주세요.</li>
+                <li><strong>리더의 시각과 주도성 어필하기:</strong> '시키는 테스트만 잘해요'를 넘어설 때입니다. JMeter 등을 통한 시스템 한계 부하 분석이나 성능 테스트 결과를 해석해 기준을 합의한 경험을 내세워 'QA 프로세스를 리드할 역량'을 어필하세요.</li>
+            </ul>
+        </div>
+
+        <div class="section-box action">
+            <div class="section-title title-action">🏃‍♀️ 오늘 당장 시작할 액션 플랜 4단계</div>
+            <ul class="action-list">
+                <li><strong>경력기술서 다이어트:</strong> 불필요한 이모지나 시각적인 장식을 과감히 빼고, 기업 양식에 맞춘 2~3페이지 이내의 깔끔한 문서로 압축하세요.</li>
+                <li><strong>STAR 구조 라벨 숨기기:</strong> 경험을 STAR(상황/과제/행동/결과) 구조로 작성하되, 'S:', 'T:' 같은 라벨 자체는 지우고 자연스러운 문장으로 녹여내세요.</li>
+                <li><strong>프로세스 전체 관점으로 서술하기:</strong> 단순히 '버그를 잡았다'가 아니라, '테스트 플랜 기획 - TC 설계 - 버그 리포트 작성 - 성능 테스트 - 최종 사인오프'로 이어지는 전체 숲을 다뤄본 경험으로 포장하세요.</li>
+                <li><strong>모호한 단어 재정의:</strong> 이력서에 있는 '데이터 정합성' 같은 단어를 찾아, 'UI에 노출되는 상품 정보와 검색 키워드 정합성 검증'처럼 프론트엔드/백엔드 맥락이 정확히 드러나게 수정하세요.</li>
+            </ul>
+        </div>
+
+        <div class="action-button-container">
+            <a href="#" class="action-button">지원할 기업의 언어로 이력서 튜닝하기 🚀</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
